@@ -1,0 +1,9 @@
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    phone VARCHAR(20),
+    registered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    age INT CHECK (age >= 18),
+    rate FLOAT NOT NULL CHECK (rate >= 0 AND rate <= 5)
+);
