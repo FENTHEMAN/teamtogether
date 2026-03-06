@@ -4,6 +4,6 @@ CREATE TABLE users (
     email VARCHAR(100) NOT NULL UNIQUE,
     phone VARCHAR(20),
     registered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    age INT CHECK (age >= 18),
+    age INT NOT NULL CHECK (age >= 18),
     rate FLOAT NOT NULL CHECK (rate >= 0 AND rate <= 5)
 );
