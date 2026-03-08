@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS y18_users AS
+    SELECT * 
+    FROM users 
+    WHERE age = 18;
+
+ALTER TABLE y18_users ADD PRIMARY KEY (id);
+ALTER TABLE y18_users ADD CONSTRAINT age CHECK (age = 18);
+ALTER TABLE y18_users ALTER COLUMN id SET DEFAULT nextval('y18_users_id_seq');
+CREATE SEQUENCE IF NOT EXISTS y18_users_id_seq;
